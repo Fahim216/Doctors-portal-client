@@ -33,13 +33,13 @@ const Dashboard = () => {
             <div className="col-md-2">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-3 ms-5 mt-5">
             <Calendar
         onChange={handleDateChange}
         value={new Date()}
       />
             </div>
-            <div className="col-md-5">
+            <div className="col-md-3">
                 <AppointmentByDate appointments={appointments}></AppointmentByDate>
             </div>
             </div>
