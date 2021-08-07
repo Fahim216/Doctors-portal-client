@@ -28,14 +28,17 @@ const AppointmentForm = ({ modalIsOpen, closeModal, AppointmentOn, date }) => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify(data)
+     
     })
-    .then(res=>res.json())
+ 
     .then(success=>{
       if(success){
+      alert('Your appointment is successfully created');
         closeModal();
-        alert('appointment created successfully');
        
+        
       }
+      
     })
 
 

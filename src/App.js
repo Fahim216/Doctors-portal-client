@@ -13,6 +13,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import AllPatients from "./components/AllPatients/AllPatients/AllPatients";
+import AddDoctor from './components/Dashboard/AddDoctor/AddDoctor';
 
 
 export const UserContext =createContext();
@@ -24,21 +25,23 @@ function App() {
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
    <Router>
      <Switch>
-     <Route exact path="/home">
+     <Route exact path="/">
       <Home/>
-      
        </Route>
        <Route path="/doctor/appointment">
          <Appointment></Appointment>
        </Route>
-       <Route path="/dashboard/appointment">
+       <PrivateRoute path="/dashboard/appointment">
          <Dashboard/>
-       </Route>
+       </PrivateRoute>
        <Route path="/login">
          <Login></Login>
        </Route>
     <Route path="/doctor/patients">
       <AllPatients></AllPatients>
+    </Route>
+    <Route path="/addDoctor">
+      <AddDoctor></AddDoctor>
     </Route>
      </Switch>
    </Router>
